@@ -17,8 +17,8 @@ public class TestPensionerMethods {
     @Test
     public void testIntrestMethod() throws Exception {
         LoanIntrest pensionerIntrest = new Pensioneer();
-        double intrest=pensionerIntrest.intrest(700.00,0.2,2);
-        Assert.assertEquals(280.0,intrest);
+        double intrest=pensionerIntrest.calcIntrest(700.00,2)*0.5;
+        Assert.assertEquals(350.0,intrest);
 
     }
 }

@@ -12,12 +12,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class TestPensionerMethods {
     private LoanIntrest intrest;
+   private ApplicationContext apcontext;
     @Before
     public void setUp() throws Exception {
-        ApplicationContext apcontext = new AnnotationConfigApplicationContext(Appconfig.class);
-        intrest =(LoanIntrest) apcontext.getBean("calcIntrest");
+       apcontext = new AnnotationConfigApplicationContext(Appconfig.class);
+        intrest =(LoanIntrest) apcontext.getBean("calculate Intrest");
 
-    }
+
+         }
+
+
 
     @After
     public void tearDown() throws Exception {
@@ -27,9 +31,11 @@ public class TestPensionerMethods {
 
     @Test
     public void testIntrestMethod() throws Exception {
-        double intrestAmount=intrest.calcIntrest(100,0.5,2);
+        double intrestAmount=intrest.calcIntrest(100,2)*0.5;
 
-        Assert.assertEquals(100.0,intrestAmount);
+        Assert.assertEquals(50.0,intrestAmount);
+
+        System.out.print(apcontext.getBean("calculate Intrest"));
 
     }
 }

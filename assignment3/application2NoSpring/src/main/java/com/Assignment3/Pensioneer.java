@@ -7,9 +7,9 @@ public class Pensioneer  implements LoanIntrest{
 
     public Pensioneer(){}
 
-    public double calcIntrest(double principal,double rate,int years){
+    public double calcIntrest(double principal,int years){
 
-        return principal*rate*years;
+        return principal*0.5*years;
     }
 
 

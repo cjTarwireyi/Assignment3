@@ -9,10 +9,14 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class Appconfig {
-@Bean(name = "calcIntrest")
+@Bean(name = "calculate Intrest")
     public LoanIntrest getIntrest(){
     return new Pensioneer();
 }
+    @Bean(name="Loan")
+    public LoanIntrest getStudent(){
+        return new StudentIntrest();
+    }
 
 
 }
